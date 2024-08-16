@@ -14,15 +14,12 @@ export class InventoryChecker {
    * @returns 処理済み商品リスト
    */
   updateInventoryInformation(products: Product[]): Product[] {
-    // forループをArrayメソッドに置き換える
+    // forループをArrayメソッドに置き換えた
     return products
       .filter((product, index, self) =>
         this.productIsEqual(product, index, self)
       )
-      .map((product) => {
-        const updatedProduct = this.updateProduct(product);
-        return updatedProduct;
-      });
+      .map((product) => this.updateProduct(product));
   }
 
   // 判定処理の変更にともなってこちらも変更
