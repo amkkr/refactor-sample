@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "test": "deno test ./**/*.test.ts"
+  },
+  "imports": {
+    "testing": "https://deno.land/std@0.224.0/assert/mod.ts"
+  }
+}
