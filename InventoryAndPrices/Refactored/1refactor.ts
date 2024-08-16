@@ -22,7 +22,7 @@ export class InventoryChecker {
           break;
         }
       }
-      // 2. 在庫が20個以上になったら在庫過多なので破棄する
+
       const updatedProduct = this.updateProduct(products[i]);
       updated.push(updatedProduct);
     }
@@ -33,6 +33,7 @@ export class InventoryChecker {
   private updateProduct(product: Product): Product {
     const checkedProduct = product; // 引数を変更したくないのでコピー
 
+    // 2. 在庫が20個以上になったら在庫過多なので破棄する
     if (checkedProduct.stockNumber >= 20) {
       const tooMany = checkedProduct.stockNumber - 19; //捨てる個数を計算
       console.log(
